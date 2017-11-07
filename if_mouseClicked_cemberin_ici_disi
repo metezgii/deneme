@@ -1,0 +1,33 @@
+int rad=40;
+int x=300;
+int y=300;
+
+void setup(){
+  
+  
+  size(800,800);
+  
+  
+}
+
+void draw(){
+  
+  background(0);
+  fill(#ffffff);
+  ellipse(x,y,rad,rad);
+  
+  }
+  
+  void mouseClicked(){
+   float d= dist(mouseX,mouseY,x,y);
+    println(d);
+   // println("mouse x pos: "+mouseX);
+  // println("mouse y pos: "+mouseY); 
+  if (d<rad/2){ 
+    println("ezgi");
+  } else{
+    println("kkkk");
+  }
+  
+  }
+  
