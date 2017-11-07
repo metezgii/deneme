@@ -1,0 +1,25 @@
+float x;
+float y;
+boolean isEnterPressed = false;
+int direction=-1;
+
+void setup(){
+  size(600, 600);
+  x=width;
+  y=60;
+}
+void draw() {
+  background(0);
+  /*
+x=x-1;
+*/ 
+//x=x-5; sayı arttıkçametnin gidiş hızı artıyor.
+
+if(x<-1100|| x> width +100){
+  direction= direction*-1;
+}
+x= x+(10*direction);
+
+    textSize(64);
+    text("something is moving around",x,y);
+  }
