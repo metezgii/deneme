@@ -1,0 +1,68 @@
+float x;
+float y;
+float speed=10;
+String str = "SOMETHING IS MOVING AROUND";
+float xk;
+float yk;
+float xz;
+float yz;
+String sat = "i believe";
+String ssat = "i can fly";
+float sppt=13;
+int direction = 1;
+int direction2 = -1;
+float red =255;
+float green =255;
+float blue =255;
+void setup() {
+  size(600, 600);
+  textSize(64);
+  
+  y = 60;
+  x = -textWidth(str);
+  
+  yk = y*2;
+  xk = -width;
+  
+  yz = yk*2;
+  xz = -textWidth(ssat); 
+}
+void draw() {
+  background(0);
+x = x + (speed * direction);
+  if(x>width){
+    x=-textWidth(str);
+    
+  }
+  fill(255);
+  text(str, x, y);
+ 
+  xk = xk + (speed * direction2);
+  if(xk< -textWidth(sat)){
+    xk=width;
+    red=random(255);
+    green=random(255);
+    blue=random(255);
+    speed=random(5,10);
+  }
+ fill(red,green,blue);
+ text(sat, xk,yk);
+ 
+  
+  xz = xz + (speed * direction);
+  if(xz>width){
+    xz=-textWidth(ssat);
+    red=random(255);
+    green=random(255);
+    blue=random(255);
+  }
+  text(ssat,xz,yz);
+  
+  //disko gibi renkler
+ // fill(random(255),random(255),random(255));
+  //text(str, x, y);
+ // fill(random(255),random(255),random(255));
+  //text(sat, xk,yk);
+  //fill(random(255),random(255),random(255));
+  //text(ssat,xz,yz);
+}
