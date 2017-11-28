@@ -1,0 +1,33 @@
+float x;
+float y;
+
+float x2;
+float y2;
+
+float xb;
+float yb;
+
+float pct = 1;
+//bunu küçültmek yavaşlat oluyor
+
+void setup() {
+  size(400,400);
+  
+}
+
+
+void draw() {
+background(255);
+xb=mouseX;
+yb=mouseY;
+ 
+ x = x + (xb-x)*pct;
+  y = y + (yb-y)*pct;
+  //expo moving ellipse
+  fill(#3498DB);
+  noStroke();
+  ellipse(x,y,40,40);
+  stroke(#3498DB);
+  line(x,y,mouseX,mouseY);
+  }
+  
