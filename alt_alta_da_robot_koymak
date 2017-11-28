@@ -1,0 +1,118 @@
+float x;
+float y;
+
+float x2;
+float y2;
+
+float xb;
+float yb;
+
+float pct = 0.05;
+//bunu küçültmek yavaşlat oluyor
+
+void setup() {
+  size(800,800);
+  
+}
+
+
+void draw() {
+background(255);
+xb=mouseX;
+yb=mouseY;
+ 
+ x = x + (xb-x)*pct;
+  y = y + (yb-y)*pct;
+  //expo moving ellipse
+  /*fill(#3498DB);
+  noStroke();
+  ellipse(x,y,40,40);
+  */
+  float nx=0;
+    float ny=0;
+  for(int i=0; i<120; i++){
+    nx= (80*(i%4));
+    if(i % 11 == 0 && i !=0){
+   ny=ny+160;
+   } 
+ 
+   drawRobot(nx,ny);
+  }
+    
+}
+ void drawRobot(float xpos, float ypos){
+ pushMatrix();
+  translate(xpos,ypos);
+  scale(0.5,0.5);
+  
+  //------------
+  
+  
+//kulaklar
+  stroke(3);
+  fill(#F01616);
+  ellipse(162, 89, 18, 25);
+  ellipse(240, 89, 18, 25);  
+
+  //anten
+  stroke(3);
+  fill(#4510E8);
+  triangle(200, 40, 189, 62, 211, 62);
+  ellipse(200, 41, 10, 10);
+
+  //boyun
+  stroke(2);
+  fill(#F01616);
+  rect(194, 89, 13, 50);
+
+  //kafa
+  stroke(2);
+  fill(#203EF5);
+  ellipse(200, 88, 79, 57);
+
+  //gözler(beyaz)
+  stroke(2);
+  fill(#ffffff);
+  ellipse(181, 89, 26, 26);
+  ellipse(220, 89, 26, 26);
+
+  //gözler(siyah)
+  fill(0);
+  ellipse(180, 85, 18, 18);
+  ellipse(223, 93, 18, 18);
+
+ //ayaklar
+  stroke(2);
+  fill(#203EF5);
+  triangle(174,281,162,256,187,256);
+  triangle(226,281,214,256,239,256);
+fill(#F01616);
+  triangle(174,223,153,263,194,263);
+  triangle(226,223,206,263,246,263);
+  
+
+  
+  //gövde
+  stroke(2);
+  fill(#203EF5);
+  rect(150, 139, 100, 100);
+  fill(#F01616);
+  rect(160, 149, 80, 80);
+  fill(#203EF5);
+  rect(170, 159, 60, 60);
+
+  //kollar
+  stroke(0);
+  line(120,156,150,156);
+  line(120,156,120,205);
+  line(280,156,250,156);
+  line(280,156,280,205);
+  
+  //kola kalınlık
+  stroke(2);
+  fill(#F01616);
+  rect(116,163,7,37);
+  rect(276,163,7,37);
+  popMatrix();
+  
+}
